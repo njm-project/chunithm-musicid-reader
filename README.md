@@ -4,7 +4,6 @@
 pip install -r requirements.txt
 ```
 ## 🎵 musicid_exporter.py
-## 🎵 musicid_exporter.py
 ### 功能
 从XML文件提取：
 
@@ -14,7 +13,6 @@ pip install -r requirements.txt
 ```bash
 python musicid_exporter.py --data "D:/chunithm/data" --option "D:/chunithm/option"
 ```
-## 🖼️ musicpic_exporter.py
 ## 🖼️ musicpic_exporter.py
 ### 功能
 转换 `jaketFile/path`
