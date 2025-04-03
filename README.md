@@ -12,7 +12,7 @@ pip install -r requirements.txt
 - 乐曲版本信息（WIP）
 ### 使用示例
 ```bash
-python musicid_exporter.py --data "D:/chunithm/data" --option "D:/chunithm/option"
+python musicid_exporter.py --data ".example/data" --option ".example/option"
 ```
 ## 🖼️ musicpic_exporter.py(WIP)
 ### 功能
