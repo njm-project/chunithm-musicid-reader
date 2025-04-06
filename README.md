@@ -14,11 +14,11 @@ pip install -r requirements.txt
 ```bash
 python musicid_exporter.py --data ".example/data" --option ".example/option"
 ```
-## 🖼️ musicpic_exporter.py(WIP)
+## 🖼️ dds-reader.py
 ### 功能
-转换 `jaketFile/path`
+转换 `DDS游戏文件`
 
 ### 使用示例
 ```bash
-python musicpic_exporter.py --data "./example/data" --option "./example/option"
+python dds-reader.py --data "./example/data" --option "./example/option"
 ```
