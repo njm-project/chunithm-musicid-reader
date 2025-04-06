@@ -15,10 +15,13 @@ def parse_music_xml(filepath):
         # 定位name元素下的str（对应第18行内容）
         music_name = root.find('./name/str').text
         
-        return music_id, music_name
+        # 新增提取releaseTagName下的str（对应第6行内容）
+        release_version = root.find('./releaseTagName/str').text or ''
+
+        return music_id, music_name, release_version  # 修改返回值
     except Exception as e:
         print(f"解析失败 {filepath}: {str(e)}")
-        return None, None
+        return None, None, None
 
 def main():
     parser = argparse.ArgumentParser(description='CHUNITHM Music ID 导出工具')
@@ -28,7 +31,7 @@ def main():
 
     wb = Workbook()
     ws = wb.active
-    ws.append(['Music ID', 'Music Name'])
+    ws.append(['Music ID', 'Music Name', 'Release Version'])  # 新增列标题
 
     # 遍历两个目录的所有music.xml
     for base_dir in [args.data, args.option]:
@@ -36,10 +39,10 @@ def main():
             for file in files:
                 if file.lower() == 'music.xml':
                     xml_path = os.path.join(root, file)
-                    music_id, music_name = parse_music_xml(xml_path)
+                    music_id, music_name, release_ver = parse_music_xml(xml_path)
                     
                     if music_id and music_name:
-                        ws.append([music_id, music_name])
+                        ws.append([music_id, music_name, release_ver])  # 插入新字段
 
     output_file = os.path.join(os.getcwd(), 'music_list.xlsx')
     wb.save(output_file)
