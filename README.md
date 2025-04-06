@@ -9,7 +9,7 @@ pip install -r requirements.txt
 
 - `dataName`
 - `name/str`
-- 乐曲版本信息（WIP）
+- `乐曲版本信息`
 ### 使用示例
 ```bash
 python musicid_exporter.py --data ".example/data" --option ".example/option"
